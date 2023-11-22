@@ -22,3 +22,5 @@ Hsrc/it/alten/gmaferri/pawtropolis/entities/animals/abstracts/Animal.java,5\e\5
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 v
 Fsrc/it/alten/gmaferri/pawtropolis/utilities/factory/AnimalFactory.java,a\6\a68deb56c5567142165debb2e76c8bc65132bb05
+n
+>src/it/alten/gmaferri/pawtropolis/utilities/AnimalFactory.java,2\1\21b1dc966e3ccda26f077a1d5097ab9ca131c478

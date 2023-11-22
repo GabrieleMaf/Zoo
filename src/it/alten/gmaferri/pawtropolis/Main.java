@@ -4,25 +4,25 @@ import it.alten.gmaferri.pawtropolis.entities.Zoo;
 import it.alten.gmaferri.pawtropolis.entities.animals.Eagle;
 import it.alten.gmaferri.pawtropolis.entities.animals.Lion;
 import it.alten.gmaferri.pawtropolis.entities.animals.Tiger;
-
-import java.time.LocalDate;
+import it.alten.gmaferri.pawtropolis.utilities.AnimalFactory;
 
 public class Main {
     public static void main(String[] args) {
 
         Zoo zoo = new Zoo();
+        AnimalFactory animalFactory = AnimalFactory.getInstance();
 
-        Tiger tiger1 = new Tiger("AlejandroCoulibaly", "anrSs5z", 35, LocalDate.of(2023, 11, 30), 401, 4.41, 7);
-        Tiger tiger2 = new Tiger("HugoLeon", "oIjXIpaBPE", 12, LocalDate.of(2017, 11, 30), 89, 1.79, 16);
-        Tiger tiger3 = new Tiger("SergioKumar", "tiiIYcfVH", 5, LocalDate.of(2015, 11, 30), 100, 2.97, 15);
+        Tiger tiger1 = animalFactory.createTiger();
+        Tiger tiger2 = animalFactory.createTiger();
+        Tiger tiger3 = animalFactory.createTiger();
 
-        Eagle eagle1 = new Eagle("FatemehPu", "OLxv4fLFGr", 10, LocalDate.of(2015, 5, 15), 26, 1.00, 19);
-        Eagle eagle2 = new Eagle("MargaritaSong", "o1NhQDqwsG", 14, LocalDate.of(2013, 7, 15), 23, 4.74, 17);
-        Eagle eagle3 = new Eagle("EmmanuelChi", "zA3brLbxB", 7, LocalDate.of(2015, 6, 12), 69, 7.96, 15);
+        Eagle eagle1 = animalFactory.createEagle();
+        Eagle eagle2 = animalFactory.createEagle();
+        Eagle eagle3 = animalFactory.createEagle();
 
-        Lion lion1 = new Lion("NikolayMai", "anrSs5z", 35, LocalDate.of(2023, 11, 30), 481, 1.31, 6);
-        Lion lion2 = new Lion("ArmandoSah", "OFVGm1uzN", 3, LocalDate.of(2023, 10, 30), 351, 1.41, 7);
-        Lion lion3 = new Lion("AnitaRuiz", "bKheDr3", 4, LocalDate.of(2023, 7, 30), 463, 1.26, 8);
+        Lion lion1 = animalFactory.createLion();
+        Lion lion2 = animalFactory.createLion();
+        Lion lion3 = animalFactory.createLion();
 
         zoo.addAnimal(tiger1);
         zoo.addAnimal(tiger2);
