@@ -88,6 +88,7 @@ public class Zoo {
     }
 
     //HeightMethods
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public Tiger getTallestTiger() {
         if (!tigers.isEmpty())
             return tigers.stream().max(Comparator.comparing(Tiger::getHeight)).get();
@@ -132,6 +133,7 @@ public class Zoo {
 
 
     //WeightMethods
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public Tiger getHeaviestTiger() {
         if (!tigers.isEmpty())
             return tigers.stream().max(Comparator.comparing(Tiger::getWeight)).get();

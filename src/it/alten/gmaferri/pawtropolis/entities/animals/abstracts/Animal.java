@@ -11,9 +11,6 @@ public abstract class Animal {
     private double weight;
     private double height;
 
-    protected Animal() {
-    }
-
     protected Animal(String name, String favoriteFood, int age, LocalDate entryDate, double weight, double height) {
         this.name = name;
         this.favoriteFood = favoriteFood;

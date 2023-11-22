@@ -13,4 +13,12 @@ public class Logger {
             instance = new Logger();
         return instance;
     }
+
+    public void log(String message){
+        System.out.println(message);
+    }
+
+    public void err(String message){
+        System.err.println(message);
+    }
 }
