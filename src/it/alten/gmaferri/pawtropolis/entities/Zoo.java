@@ -1,5 +1,6 @@
 package it.alten.gmaferri.pawtropolis.entities;
 
+import it.alten.gmaferri.pawtropolis.entities.animals.enums.AnimalType;
 import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.Animal;
 import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.TailedAnimal;
 import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.WingedAnimal;
@@ -87,95 +88,94 @@ public class Zoo {
         return result.toString();
     }
 
-    //HeightMethods
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public Tiger getTallestTiger() {
-        if (!tigers.isEmpty())
-            return tigers.stream().max(Comparator.comparing(Tiger::getHeight)).get();
-        else
-            throw new IllegalArgumentException("No tiger found");
+
+    public Animal getTallestAnimal(AnimalType type){
+        switch(type){
+            case TIGER:
+                if (!tigers.isEmpty())
+                    return tigers.stream().max(Comparator.comparing(Tiger::getHeight)).get();
+                else
+                    throw new IllegalArgumentException("No tiger found");
+            case LION:
+                if (!lions.isEmpty())
+                    return lions.stream().max(Comparator.comparing(Lion::getHeight)).get();
+                else
+                    throw new IllegalArgumentException("No Lion found");
+            case EAGLE:
+                if (!eagles.isEmpty())
+                    return eagles.stream().max(Comparator.comparing(Eagle::getHeight)).get();
+                else
+                    throw new IllegalArgumentException("No eagle found");
+            default:
+                throw new IllegalArgumentException("No Type found");
+        }
     }
 
-    public Tiger getShortestTiger() {
-        if (!tigers.isEmpty())
-            return tigers.stream().min(Comparator.comparing(Tiger::getHeight)).get();
-        else
-            throw new IllegalArgumentException("No tiger found");
+    public Animal getShortestAnimal(AnimalType type){
+        switch(type) {
+            case TIGER:
+                if (!tigers.isEmpty())
+                    return tigers.stream().min(Comparator.comparing(Tiger::getHeight)).get();
+                else
+                    throw new IllegalArgumentException("No tiger found");
+            case LION:
+                if (!lions.isEmpty())
+                    return lions.stream().min(Comparator.comparing(Lion::getHeight)).get();
+                else
+                    throw new IllegalArgumentException("No Lion found");
+            case EAGLE:
+                if (!eagles.isEmpty())
+                    return eagles.stream().min(Comparator.comparing(Eagle::getHeight)).get();
+                else
+                    throw new IllegalArgumentException("No eagle found");
+            default:
+                throw new IllegalArgumentException("No Type found");
+        }
     }
 
-    public Lion getTallestLion() {
-        if (!lions.isEmpty())
-            return lions.stream().max(Comparator.comparing(Lion::getHeight)).get();
-        else
-            throw new IllegalArgumentException("No Lion found");
+    public Animal getHeaviestAnimal(AnimalType type){
+        switch(type) {
+            case TIGER:
+                if (!tigers.isEmpty())
+                    return tigers.stream().max(Comparator.comparing(Tiger::getWeight)).get();
+                else
+                    throw new IllegalArgumentException("No tiger found");
+            case LION:
+                if (!lions.isEmpty())
+                    return lions.stream().max(Comparator.comparing(Lion::getWeight)).get();
+                else
+                    throw new IllegalArgumentException("No Lion found");
+            case EAGLE:
+                if (!eagles.isEmpty())
+                    return eagles.stream().max(Comparator.comparing(Eagle::getWeight)).get();
+                else
+                    throw new IllegalArgumentException("No eagle found");
+            default:
+                throw new IllegalArgumentException("No Type found");
+        }
     }
 
-    public Lion getShortestLion() {
-        if (!lions.isEmpty())
-            return lions.stream().min(Comparator.comparing(Lion::getHeight)).get();
-        else
-            throw new IllegalArgumentException("No Lion found");
+    public Animal getLightestAnimal(AnimalType type){
+        switch(type) {
+            case TIGER:
+                if (!tigers.isEmpty())
+                    return tigers.stream().min(Comparator.comparing(Tiger::getWeight)).get();
+                else
+                    throw new IllegalArgumentException("No tiger found");
+            case LION:
+                if (!lions.isEmpty())
+                    return lions.stream().min(Comparator.comparing(Lion::getWeight)).get();
+                else
+                    throw new IllegalArgumentException("No Lion found");
+            case EAGLE:
+                if (!eagles.isEmpty())
+                    return eagles.stream().min(Comparator.comparing(Eagle::getWeight)).get();
+                else
+                    throw new IllegalArgumentException("No eagle found");
+            default:
+                throw new IllegalArgumentException("No Type found");
+        }
     }
-
-    public Eagle getTallestEagle() {
-        if (!eagles.isEmpty())
-            return eagles.stream().max(Comparator.comparing(Eagle::getHeight)).get();
-        else
-            throw new IllegalArgumentException("No eagle found");
-    }
-
-    public Eagle getShortestEagle() {
-        if (!eagles.isEmpty())
-            return eagles.stream().min(Comparator.comparing(Eagle::getHeight)).get();
-        else
-            throw new IllegalArgumentException("No eagle found");
-    }
-
-
-    //WeightMethods
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public Tiger getHeaviestTiger() {
-        if (!tigers.isEmpty())
-            return tigers.stream().max(Comparator.comparing(Tiger::getWeight)).get();
-        else
-            throw new IllegalArgumentException("No tiger found");
-    }
-
-    public Tiger getLightestTiger() {
-        if (!tigers.isEmpty())
-            return tigers.stream().min(Comparator.comparing(Tiger::getWeight)).get();
-        else
-            throw new IllegalArgumentException("No tiger found");
-    }
-
-    public Lion getHeaviestLion() {
-        if (!lions.isEmpty())
-            return lions.stream().max(Comparator.comparing(Lion::getWeight)).get();
-        else
-            throw new IllegalArgumentException("No Lion found");
-    }
-
-    public Lion getLightestLion() {
-        if (!lions.isEmpty())
-            return lions.stream().min(Comparator.comparing(Lion::getWeight)).get();
-        else
-            throw new IllegalArgumentException("No Lion found");
-    }
-
-    public Eagle getHeaviestEagle() {
-        if (!eagles.isEmpty())
-            return eagles.stream().max(Comparator.comparing(Eagle::getWeight)).get();
-        else
-            throw new IllegalArgumentException("No eagle found");
-    }
-
-    public Eagle getLightestEagle() {
-        if (!eagles.isEmpty())
-            return eagles.stream().min(Comparator.comparing(Eagle::getWeight)).get();
-        else
-            throw new IllegalArgumentException("No eagle found");
-    }
-
 
     public TailedAnimal getLongestTailedAnimal() {
         List<TailedAnimal> tailedAnimals = new ArrayList<>();

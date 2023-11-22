@@ -24,3 +24,7 @@ v
 Fsrc/it/alten/gmaferri/pawtropolis/utilities/factory/AnimalFactory.java,a\6\a68deb56c5567142165debb2e76c8bc65132bb05
 n
 >src/it/alten/gmaferri/pawtropolis/utilities/AnimalFactory.java,2\1\21b1dc966e3ccda26f077a1d5097ab9ca131c478
+r
+Bsrc/it/alten/gmaferri/pawtropolis/entities/animals/AnimalType.java,0\0\00d6b62dd5500b202506743eaba9aee16e4c6c66
+x
+Hsrc/it/alten/gmaferri/pawtropolis/entities/animals/enums/AnimalType.java,c\c\cc62063662a02890617884f4bd11a775d7fd2ac4

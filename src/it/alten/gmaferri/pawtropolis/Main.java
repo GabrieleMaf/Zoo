@@ -1,6 +1,7 @@
 package it.alten.gmaferri.pawtropolis;
 
 import it.alten.gmaferri.pawtropolis.entities.Zoo;
+import it.alten.gmaferri.pawtropolis.entities.animals.enums.AnimalType;
 import it.alten.gmaferri.pawtropolis.entities.animals.Eagle;
 import it.alten.gmaferri.pawtropolis.entities.animals.Lion;
 import it.alten.gmaferri.pawtropolis.entities.animals.Tiger;
@@ -38,24 +39,24 @@ public class Main {
 
         System.out.println(zoo.showAnimals());
 
-        System.out.println(zoo.getTallestTiger());
-        System.out.println(zoo.getTallestLion());
-        System.out.println(zoo.getTallestEagle());
+        System.out.println(zoo.getTallestAnimal(AnimalType.TIGER));
+        System.out.println(zoo.getTallestAnimal(AnimalType.LION));
+        System.out.println(zoo.getTallestAnimal(AnimalType.EAGLE));
         System.out.println();
 
-        System.out.println(zoo.getShortestTiger());
-        System.out.println(zoo.getShortestLion());
-        System.out.println(zoo.getShortestEagle());
+        System.out.println(zoo.getShortestAnimal(AnimalType.TIGER));
+        System.out.println(zoo.getShortestAnimal(AnimalType.LION));
+        System.out.println(zoo.getShortestAnimal(AnimalType.EAGLE));
         System.out.println();
 
-        System.out.println(zoo.getHeaviestTiger());
-        System.out.println(zoo.getHeaviestLion());
-        System.out.println(zoo.getHeaviestEagle());
+        System.out.println(zoo.getHeaviestAnimal(AnimalType.TIGER));
+        System.out.println(zoo.getHeaviestAnimal(AnimalType.LION));
+        System.out.println(zoo.getHeaviestAnimal(AnimalType.EAGLE));
         System.out.println();
 
-        System.out.println(zoo.getLightestTiger());
-        System.out.println(zoo.getLightestEagle());
-        System.out.println(zoo.getLightestLion());
+        System.out.println(zoo.getLightestAnimal(AnimalType.TIGER));
+        System.out.println(zoo.getLightestAnimal(AnimalType.LION));
+        System.out.println(zoo.getLightestAnimal(AnimalType.EAGLE));
         System.out.println();
 
         System.out.println(zoo.getLongestTailedAnimal());
