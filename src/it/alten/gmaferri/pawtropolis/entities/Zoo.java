@@ -1,12 +1,12 @@
 package it.alten.gmaferri.pawtropolis.entities;
 
-import it.alten.gmaferri.pawtropolis.entities.animals.enums.AnimalType;
-import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.Animal;
-import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.TailedAnimal;
-import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.WingedAnimal;
 import it.alten.gmaferri.pawtropolis.entities.animals.Eagle;
 import it.alten.gmaferri.pawtropolis.entities.animals.Lion;
 import it.alten.gmaferri.pawtropolis.entities.animals.Tiger;
+import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.Animal;
+import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.TailedAnimal;
+import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.WingedAnimal;
+import it.alten.gmaferri.pawtropolis.entities.animals.enums.AnimalType;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -89,8 +89,8 @@ public class Zoo {
     }
 
 
-    public Animal getTallestAnimal(AnimalType type){
-        switch(type){
+    public Animal getTallestAnimal(AnimalType type) {
+        switch (type) {
             case TIGER:
                 if (!tigers.isEmpty())
                     return tigers.stream().max(Comparator.comparing(Tiger::getHeight)).get();
@@ -111,8 +111,8 @@ public class Zoo {
         }
     }
 
-    public Animal getShortestAnimal(AnimalType type){
-        switch(type) {
+    public Animal getShortestAnimal(AnimalType type) {
+        switch (type) {
             case TIGER:
                 if (!tigers.isEmpty())
                     return tigers.stream().min(Comparator.comparing(Tiger::getHeight)).get();
@@ -133,8 +133,8 @@ public class Zoo {
         }
     }
 
-    public Animal getHeaviestAnimal(AnimalType type){
-        switch(type) {
+    public Animal getHeaviestAnimal(AnimalType type) {
+        switch (type) {
             case TIGER:
                 if (!tigers.isEmpty())
                     return tigers.stream().max(Comparator.comparing(Tiger::getWeight)).get();
@@ -155,8 +155,8 @@ public class Zoo {
         }
     }
 
-    public Animal getLightestAnimal(AnimalType type){
-        switch(type) {
+    public Animal getLightestAnimal(AnimalType type) {
+        switch (type) {
             case TIGER:
                 if (!tigers.isEmpty())
                     return tigers.stream().min(Comparator.comparing(Tiger::getWeight)).get();

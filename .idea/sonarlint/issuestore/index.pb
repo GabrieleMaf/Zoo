@@ -28,3 +28,5 @@ r
 Bsrc/it/alten/gmaferri/pawtropolis/entities/animals/AnimalType.java,0\0\00d6b62dd5500b202506743eaba9aee16e4c6c66
 x
 Hsrc/it/alten/gmaferri/pawtropolis/entities/animals/enums/AnimalType.java,c\c\cc62063662a02890617884f4bd11a775d7fd2ac4
+>
+NewProject.iml,f\7\f72a5689eff694c11e5d28c2e2aab93101588d23
