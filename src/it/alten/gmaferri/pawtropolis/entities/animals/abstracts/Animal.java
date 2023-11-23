@@ -71,11 +71,11 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
-                ", favoriteFood='" + favoriteFood + '\'' +
-                ", age=" + age +
-                ", entryDate=" + entryDate +
-                ", weight=" + weight +
-                ", height=" + height;
+        return "name:\"" + name + '\"' +
+                ", favoriteFood:\"" + favoriteFood + '\"' +
+                ", age:" + age +
+                ", entryDate:\"" + entryDate + '\"' +
+                ", weight:" + weight +
+                ", height:" + height;
     }
 }

@@ -9,8 +9,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Zoo{
+public class Zoo {
 
+    private static final String ERR = "no %s found";
     private final List<Animal> animals;
 
     public Zoo() {
@@ -20,6 +21,7 @@ public class Zoo{
     public List<Animal> getAnimals() {
         return animals;
     }
+
     public void addAnimal(Animal animal) {
         if (!animals.contains(animal))
             animals.add(animal);
@@ -27,55 +29,59 @@ public class Zoo{
 
     public void removeAnimal(Animal animal) {
         if (!(animals.remove(animal)))
-            throw new IllegalArgumentException("Animal not found");
-        }
+            throw new IllegalArgumentException(String.format(ERR, Animal.class.getSimpleName()));
+    }
 
     public String showAnimals() {
-        return animals.stream().map(Animal::toString).collect(Collectors.joining("\n"));
+        return animals.stream().
+                map(Animal::toString).
+                collect(Collectors.joining("\n"));
     }
 
-    public <T extends Animal> T getTallestAnimal(Class<T> tClass) {
-        return tClass.cast(animals.stream()
-                .filter(tClass::isInstance)
-                .max(Comparator.comparing(Animal::getHeight))
-                .orElseThrow(() -> new IllegalArgumentException(String.format("No %s found", tClass.getSimpleName()))));
-    }
-
-    public <T extends Animal> T getShortestAnimal(Class<T> tClass) {
-        return tClass.cast(animals.stream()
-                .filter(tClass::isInstance)
-                .min(Comparator.comparing(Animal::getHeight))
-                .orElseThrow(() -> new IllegalArgumentException(String.format("No %s found", tClass.getSimpleName()))));
-    }
-
-    public <T extends Animal> T getHeaviestAnimal(Class<T> tClass) {
+    public <T extends Animal> T getTallestAnimalByClass(Class<T> tClass) {
         return tClass.cast(animals.stream()
                 .filter(tClass::isInstance)
                 .max(Comparator.comparing(Animal::getWeight))
-                .orElseThrow(() -> new IllegalArgumentException(String.format("No %s found", tClass.getSimpleName()))));
+                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, tClass.getSimpleName()))));
     }
 
-    public <T extends Animal> T getLightestAnimal(Class<T> tClass) {
+
+    public <T extends Animal> T getShortestAnimalByClass(Class<T> tClass) {
+        return tClass.cast(animals.stream()
+                .filter(tClass::isInstance)
+                .min(Comparator.comparing(Animal::getHeight))
+                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, tClass.getSimpleName()))));
+    }
+
+    public <T extends Animal> T getHeaviestAnimalByClass(Class<T> tClass) {
+        return tClass.cast(animals.stream()
+                .filter(tClass::isInstance)
+                .max(Comparator.comparing(Animal::getWeight))
+                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, tClass.getSimpleName()))));
+    }
+
+    public <T extends Animal> T getLightestAnimalByClass(Class<T> tClass) {
         return tClass.cast(animals.stream()
                 .filter(tClass::isInstance)
                 .min(Comparator.comparing(Animal::getWeight))
-                .orElseThrow(() -> new IllegalArgumentException(String.format("No %s found", tClass.getSimpleName()))));
+                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, tClass.getSimpleName()))));
     }
+
     public TailedAnimal getLongestTailedAnimal() {
-            return animals.stream()
-                    .filter(TailedAnimal.class::isInstance)
-                    .map(TailedAnimal.class::cast)
-                    .max(Comparator.comparing(TailedAnimal::getTailLength))
-                    .orElseThrow(() -> new IllegalArgumentException("No tailed animal found"));
+        return animals.stream()
+                .filter(TailedAnimal.class::isInstance)
+                .map(TailedAnimal.class::cast)
+                .max(Comparator.comparing(TailedAnimal::getTailLength))
+                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, TailedAnimal.class.getSimpleName())));
 
     }
 
     public WingedAnimal getWidestWingspanAnimal() {
-            return animals.stream()
-                    .filter(WingedAnimal.class::isInstance)
-                    .map(WingedAnimal.class::cast)
-                    .max(Comparator.comparing(WingedAnimal::getWingspan))
-                    .orElseThrow(() -> new IllegalArgumentException("No winged animal found"));
+        return animals.stream()
+                .filter(WingedAnimal.class::isInstance)
+                .map(WingedAnimal.class::cast)
+                .max(Comparator.comparing(WingedAnimal::getWingspan))
+                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, WingedAnimal.class.getSimpleName())));
     }
 
 }

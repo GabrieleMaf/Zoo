@@ -21,7 +21,7 @@ public class WingedAnimal extends Animal {
     @Override
     public String toString() {
         return super.toString() +
-                ", wingspan=" + wingspan;
+                ", wingspan:" + wingspan;
     }
 }
 

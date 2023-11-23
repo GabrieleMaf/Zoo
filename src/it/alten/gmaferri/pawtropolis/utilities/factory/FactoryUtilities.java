@@ -5,10 +5,9 @@ import java.time.LocalDate;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class RandomizerUtilities {
+public class FactoryUtilities {
 
-    private RandomizerUtilities(){}
-
+    private FactoryUtilities(){}
     static DecimalFormat decimalFormat =new DecimalFormat("#.##");
     static Random randomizer = new Random();
     static String[] names = {"Jose", "Teixeira", "Denis", "Lian", "Luffy", "Titti", "Pippo", "Pluto", "Paperino" };
