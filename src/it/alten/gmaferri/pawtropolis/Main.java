@@ -56,7 +56,7 @@ public class Main {
 
         System.out.println(zoo.getLightestAnimalByClass(Tiger.class));
         System.out.println(zoo.getLightestAnimalByClass(Lion.class));
-        System.out.println(zoo.getLightestAnimalByClass(Lion.class));
+        System.out.println(zoo.getLightestAnimalByClass(Eagle.class));
         System.out.println();
 
         System.out.println(zoo.getLongestTailedAnimal());

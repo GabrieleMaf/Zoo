@@ -18,18 +18,8 @@ Hsrc/it/alten/gmaferri/pawtropolis/entities/animals/abstracts/Animal.java,5/e/5
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-n
->src/it/alten/gmaferri/pawtropolis/utilities/AnimalFactory.java,2/1/21b1dc966e3ccda26f077a1d5097ab9ca131c478
-x
-Hsrc/it/alten/gmaferri/pawtropolis/entities/animals/enums/AnimalType.java,c/c/cc62063662a02890617884f4bd11a775d7fd2ac4
 >
 NewProject.iml,f\7\f72a5689eff694c11e5d28c2e2aab93101588d23
-s
-Csrc/it/alten/gmaferri/pawtropolis/entities/animals/Stupidclass.java,a/9/a942b7c2746bde85eb7a36b63beaba730c3f38d4
-t
-Dsrc/it/alten/gmaferri/pawtropolis/utilities/RandomizerUtilities.java,2/8/28c430541de69c95d320e5fbb84eb92d4ae458d9
-|
-Lsrc/it/alten/gmaferri/pawtropolis/utilities/factory/RandomizerUtilities.java,b/4/b459dba669b732663c550fbe5f8052b73afd8110
 v
 Fsrc/it/alten/gmaferri/pawtropolis/utilities/factory/AnimalFactory.java,a/6/a68deb56c5567142165debb2e76c8bc65132bb05
 y
