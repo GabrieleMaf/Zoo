@@ -31,7 +31,9 @@ public class Zoo{
         }
 
     public String showAnimals() {
-        return animals.stream().map(Animal::toString).collect(Collectors.joining("\n"));
+        return animals.stream().
+                map(Animal::toString).
+                collect(Collectors.joining("\n"));
     }
 
     public <T extends Animal> T getTallestAnimalByClass(Class<T> tClass) {
@@ -40,6 +42,7 @@ public class Zoo{
                 .max(Comparator.comparing(Animal::getWeight))
                 .orElseThrow(() -> new IllegalArgumentException(String.format("No %s found", tClass.getSimpleName()))));
     }
+
 
     public <T extends Animal> T getShortestAnimalByClass(Class<T> tClass) {
         return tClass.cast(animals.stream()
