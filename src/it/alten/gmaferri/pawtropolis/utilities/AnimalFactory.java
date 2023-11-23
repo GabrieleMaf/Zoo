@@ -63,8 +63,8 @@ public class AnimalFactory {
                 favoriteFoods[randomizer.nextInt(favoriteFoods.length)],
                 randomizer.nextInt(11),
                 between(LocalDate.of(2000, 01, 12), LocalDate.now()),
-                randomizer.nextInt(260)/100.0,
-                randomizer.nextInt(2)/100.0,
-                randomizer.nextInt(90));
+                randomizer.nextDouble(260),
+                randomizer.nextDouble(1.2),
+                randomizer.nextDouble(90));
     }
 }
