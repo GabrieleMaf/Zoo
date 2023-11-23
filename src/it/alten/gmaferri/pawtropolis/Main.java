@@ -1,11 +1,10 @@
 package it.alten.gmaferri.pawtropolis;
 
 import it.alten.gmaferri.pawtropolis.entities.Zoo;
-import it.alten.gmaferri.pawtropolis.entities.animals.enums.AnimalType;
 import it.alten.gmaferri.pawtropolis.entities.animals.Eagle;
 import it.alten.gmaferri.pawtropolis.entities.animals.Lion;
 import it.alten.gmaferri.pawtropolis.entities.animals.Tiger;
-import it.alten.gmaferri.pawtropolis.utilities.AnimalFactory;
+import it.alten.gmaferri.pawtropolis.utilities.factory.AnimalFactory;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,25 +37,26 @@ public class Main {
         zoo.addAnimal(lion3);
 
         System.out.println(zoo.showAnimals());
-
-        System.out.println(zoo.getTallestAnimal(AnimalType.TIGER));
-        System.out.println(zoo.getTallestAnimal(AnimalType.LION));
-        System.out.println(zoo.getTallestAnimal(AnimalType.EAGLE));
         System.out.println();
 
-        System.out.println(zoo.getShortestAnimal(AnimalType.TIGER));
-        System.out.println(zoo.getShortestAnimal(AnimalType.LION));
-        System.out.println(zoo.getShortestAnimal(AnimalType.EAGLE));
+        System.out.println(zoo.getTallestAnimal(Tiger.class));
+        System.out.println(zoo.getTallestAnimal(Lion.class));
+        System.out.println(zoo.getTallestAnimal(Eagle.class));
         System.out.println();
 
-        System.out.println(zoo.getHeaviestAnimal(AnimalType.TIGER));
-        System.out.println(zoo.getHeaviestAnimal(AnimalType.LION));
-        System.out.println(zoo.getHeaviestAnimal(AnimalType.EAGLE));
+        System.out.println(zoo.getShortestAnimal(Tiger.class));
+        System.out.println(zoo.getShortestAnimal(Lion.class));
+        System.out.println(zoo.getShortestAnimal(Eagle.class));
         System.out.println();
 
-        System.out.println(zoo.getLightestAnimal(AnimalType.TIGER));
-        System.out.println(zoo.getLightestAnimal(AnimalType.LION));
-        System.out.println(zoo.getLightestAnimal(AnimalType.EAGLE));
+        System.out.println(zoo.getHeaviestAnimal(Tiger.class));
+        System.out.println(zoo.getHeaviestAnimal(Lion.class));
+        System.out.println(zoo.getHeaviestAnimal(Eagle.class));
+        System.out.println();
+
+        System.out.println(zoo.getLightestAnimal(Tiger.class));
+        System.out.println(zoo.getLightestAnimal(Lion.class));
+        System.out.println(zoo.getLightestAnimal(Lion.class));
         System.out.println();
 
         System.out.println(zoo.getLongestTailedAnimal());

@@ -68,6 +68,7 @@ public abstract class Animal {
         this.height = height;
     }
 
+
     @Override
     public String toString() {
         return "name='" + name + '\'' +
