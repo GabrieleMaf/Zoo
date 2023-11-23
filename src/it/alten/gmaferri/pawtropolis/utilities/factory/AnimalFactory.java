@@ -7,7 +7,7 @@ import it.alten.gmaferri.pawtropolis.entities.animals.Tiger;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import static it.alten.gmaferri.pawtropolis.utilities.factory.RandomizerUtilities.*;
+import static it.alten.gmaferri.pawtropolis.utilities.factory.FactoryUtilities.*;
 
 public class AnimalFactory {
 

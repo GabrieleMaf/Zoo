@@ -32,3 +32,5 @@ Dsrc/it/alten/gmaferri/pawtropolis/utilities/RandomizerUtilities.java,2/8/28c43
 Lsrc/it/alten/gmaferri/pawtropolis/utilities/factory/RandomizerUtilities.java,b/4/b459dba669b732663c550fbe5f8052b73afd8110
 v
 Fsrc/it/alten/gmaferri/pawtropolis/utilities/factory/AnimalFactory.java,a/6/a68deb56c5567142165debb2e76c8bc65132bb05
+y
+Isrc/it/alten/gmaferri/pawtropolis/utilities/factory/FactoryUtilities.java,8/d/8d3f0f8912409e289bcb8261ff2a38782c6170f5

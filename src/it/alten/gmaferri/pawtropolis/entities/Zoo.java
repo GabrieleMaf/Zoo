@@ -34,28 +34,28 @@ public class Zoo{
         return animals.stream().map(Animal::toString).collect(Collectors.joining("\n"));
     }
 
-    public <T extends Animal> T getTallestAnimal(Class<T> tClass) {
-        return tClass.cast(animals.stream()
-                .filter(tClass::isInstance)
-                .max(Comparator.comparing(Animal::getHeight))
-                .orElseThrow(() -> new IllegalArgumentException(String.format("No %s found", tClass.getSimpleName()))));
-    }
-
-    public <T extends Animal> T getShortestAnimal(Class<T> tClass) {
-        return tClass.cast(animals.stream()
-                .filter(tClass::isInstance)
-                .min(Comparator.comparing(Animal::getHeight))
-                .orElseThrow(() -> new IllegalArgumentException(String.format("No %s found", tClass.getSimpleName()))));
-    }
-
-    public <T extends Animal> T getHeaviestAnimal(Class<T> tClass) {
+    public <T extends Animal> T getTallestAnimalByClass(Class<T> tClass) {
         return tClass.cast(animals.stream()
                 .filter(tClass::isInstance)
                 .max(Comparator.comparing(Animal::getWeight))
                 .orElseThrow(() -> new IllegalArgumentException(String.format("No %s found", tClass.getSimpleName()))));
     }
 
-    public <T extends Animal> T getLightestAnimal(Class<T> tClass) {
+    public <T extends Animal> T getShortestAnimalByClass(Class<T> tClass) {
+        return tClass.cast(animals.stream()
+                .filter(tClass::isInstance)
+                .min(Comparator.comparing(Animal::getHeight))
+                .orElseThrow(() -> new IllegalArgumentException(String.format("No %s found", tClass.getSimpleName()))));
+    }
+
+    public <T extends Animal> T getHeaviestAnimalByClass(Class<T> tClass) {
+        return tClass.cast(animals.stream()
+                .filter(tClass::isInstance)
+                .max(Comparator.comparing(Animal::getWeight))
+                .orElseThrow(() -> new IllegalArgumentException(String.format("No %s found", tClass.getSimpleName()))));
+    }
+
+    public <T extends Animal> T getLightestAnimalByClass(Class<T> tClass) {
         return tClass.cast(animals.stream()
                 .filter(tClass::isInstance)
                 .min(Comparator.comparing(Animal::getWeight))

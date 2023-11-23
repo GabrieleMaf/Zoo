@@ -39,24 +39,24 @@ public class Main {
         System.out.println(zoo.showAnimals());
         System.out.println();
 
-        System.out.println(zoo.getTallestAnimal(Tiger.class));
-        System.out.println(zoo.getTallestAnimal(Lion.class));
-        System.out.println(zoo.getTallestAnimal(Eagle.class));
+        System.out.println(zoo.getTallestAnimalByClass(Tiger.class));
+        System.out.println(zoo.getTallestAnimalByClass(Lion.class));
+        System.out.println(zoo.getTallestAnimalByClass(Eagle.class));
         System.out.println();
 
-        System.out.println(zoo.getShortestAnimal(Tiger.class));
-        System.out.println(zoo.getShortestAnimal(Lion.class));
-        System.out.println(zoo.getShortestAnimal(Eagle.class));
+        System.out.println(zoo.getShortestAnimalByClass(Tiger.class));
+        System.out.println(zoo.getShortestAnimalByClass(Lion.class));
+        System.out.println(zoo.getShortestAnimalByClass(Eagle.class));
         System.out.println();
 
-        System.out.println(zoo.getHeaviestAnimal(Tiger.class));
-        System.out.println(zoo.getHeaviestAnimal(Lion.class));
-        System.out.println(zoo.getHeaviestAnimal(Eagle.class));
+        System.out.println(zoo.getHeaviestAnimalByClass(Tiger.class));
+        System.out.println(zoo.getHeaviestAnimalByClass(Lion.class));
+        System.out.println(zoo.getHeaviestAnimalByClass(Eagle.class));
         System.out.println();
 
-        System.out.println(zoo.getLightestAnimal(Tiger.class));
-        System.out.println(zoo.getLightestAnimal(Lion.class));
-        System.out.println(zoo.getLightestAnimal(Lion.class));
+        System.out.println(zoo.getLightestAnimalByClass(Tiger.class));
+        System.out.println(zoo.getLightestAnimalByClass(Lion.class));
+        System.out.println(zoo.getLightestAnimalByClass(Lion.class));
         System.out.println();
 
         System.out.println(zoo.getLongestTailedAnimal());
