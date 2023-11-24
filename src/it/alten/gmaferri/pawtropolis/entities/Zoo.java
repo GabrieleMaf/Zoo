@@ -10,8 +10,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Zoo {
-
-    private static final String ERR = "no %s found";
     private final List<Animal> animals;
 
     public Zoo() {
@@ -22,14 +20,14 @@ public class Zoo {
         return animals;
     }
 
-    public void addAnimal(Animal animal) {
+    public boolean addAnimal(Animal animal) {
         if (!animals.contains(animal))
-            animals.add(animal);
+            return animals.add(animal);
+        return false;
     }
 
-    public void removeAnimal(Animal animal) {
-        if (!(animals.remove(animal)))
-            throw new IllegalArgumentException(String.format(ERR, Animal.class.getSimpleName()));
+    public boolean removeAnimal(Animal animal) {
+        return animals.remove(animal);
     }
 
     public String showAnimals() {
@@ -42,7 +40,7 @@ public class Zoo {
         return tClass.cast(animals.stream()
                 .filter(tClass::isInstance)
                 .max(Comparator.comparing(Animal::getWeight))
-                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, tClass.getSimpleName()))));
+                .orElse(null));
     }
 
 
@@ -50,21 +48,21 @@ public class Zoo {
         return tClass.cast(animals.stream()
                 .filter(tClass::isInstance)
                 .min(Comparator.comparing(Animal::getHeight))
-                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, tClass.getSimpleName()))));
+                .orElse(null));
     }
 
     public <T extends Animal> T getHeaviestAnimalByClass(Class<T> tClass) {
         return tClass.cast(animals.stream()
                 .filter(tClass::isInstance)
                 .max(Comparator.comparing(Animal::getWeight))
-                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, tClass.getSimpleName()))));
+                .orElse(null));
     }
 
     public <T extends Animal> T getLightestAnimalByClass(Class<T> tClass) {
         return tClass.cast(animals.stream()
                 .filter(tClass::isInstance)
                 .min(Comparator.comparing(Animal::getWeight))
-                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, tClass.getSimpleName()))));
+                .orElse(null));
     }
 
     public TailedAnimal getLongestTailedAnimal() {
@@ -72,7 +70,7 @@ public class Zoo {
                 .filter(TailedAnimal.class::isInstance)
                 .map(TailedAnimal.class::cast)
                 .max(Comparator.comparing(TailedAnimal::getTailLength))
-                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, TailedAnimal.class.getSimpleName())));
+                .orElse(null);
 
     }
 
@@ -81,7 +79,7 @@ public class Zoo {
                 .filter(WingedAnimal.class::isInstance)
                 .map(WingedAnimal.class::cast)
                 .max(Comparator.comparing(WingedAnimal::getWingspan))
-                .orElseThrow(() -> new IllegalArgumentException(String.format(ERR, WingedAnimal.class.getSimpleName())));
+                .orElse(null);
     }
 
 }

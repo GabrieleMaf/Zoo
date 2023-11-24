@@ -8,11 +8,11 @@ import java.util.concurrent.ThreadLocalRandom;
 public class FactoryUtilities {
 
     private FactoryUtilities(){}
-    static DecimalFormat decimalFormat =new DecimalFormat("#.##");
-    static Random randomizer = new Random();
-    static String[] names = {"Jose", "Teixeira", "Denis", "Lian", "Luffy", "Titti", "Pippo", "Pluto", "Paperino" };
+    public static final DecimalFormat decimalFormat =new DecimalFormat("#.##");
+    public static final Random randomizer = new Random();
+    public static final String[] names = {"Jose", "Teixeira", "Denis", "Lian", "Luffy", "Titti", "Pippo", "Pluto", "Paperino" };
 
-    static String[] favoriteFoods = {"Humans", "Carrots", "Potatoes", "Chicken", "Fish"};
+    public static final String[] favoriteFoods = {"Humans", "Carrots", "Potatoes", "Chicken", "Fish"};
 
     public static LocalDate between(LocalDate startInclusive, LocalDate endExclusive) {
         long startEpochDay = startInclusive.toEpochDay();
