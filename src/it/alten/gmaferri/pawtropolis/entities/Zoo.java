@@ -62,21 +62,19 @@ public class Zoo {
                 .min(Comparator.comparing(Animal::getWeight));
     }
 
-    public TailedAnimal getLongestTailedAnimal() {
+    public Optional<TailedAnimal> getLongestTailedAnimal() {
         return animals.stream()
                 .filter(TailedAnimal.class::isInstance)
                 .map(TailedAnimal.class::cast)
-                .max(Comparator.comparing(TailedAnimal::getTailLength))
-                .orElse(null);
+                .max(Comparator.comparing(TailedAnimal::getTailLength));
 
     }
 
-    public WingedAnimal getWidestWingspanAnimal() {
+    public Optional<WingedAnimal> getWidestWingspanAnimal() {
         return animals.stream()
                 .filter(WingedAnimal.class::isInstance)
                 .map(WingedAnimal.class::cast)
-                .max(Comparator.comparing(WingedAnimal::getWingspan))
-                .orElse(null);
+                .max(Comparator.comparing(WingedAnimal::getWingspan));
     }
 
 }
