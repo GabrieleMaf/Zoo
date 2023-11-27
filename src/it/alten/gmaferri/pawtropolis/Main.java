@@ -4,7 +4,11 @@ import it.alten.gmaferri.pawtropolis.entities.Zoo;
 import it.alten.gmaferri.pawtropolis.entities.animals.Eagle;
 import it.alten.gmaferri.pawtropolis.entities.animals.Lion;
 import it.alten.gmaferri.pawtropolis.entities.animals.Tiger;
+import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.Animal;
 import it.alten.gmaferri.pawtropolis.utilities.factory.AnimalFactory;
+
+import java.util.Objects;
+import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,41 +16,29 @@ public class Main {
         Zoo zoo = new Zoo();
         AnimalFactory animalFactory = AnimalFactory.getInstance();
 
-        Tiger tiger1 = animalFactory.createTiger();
-        Tiger tiger2 = animalFactory.createTiger();
-        Tiger tiger3 = animalFactory.createTiger();
+        for(int i=0; i<33000; i++){
+            zoo.addAnimal(animalFactory.createTiger());
+        }
 
-        Eagle eagle1 = animalFactory.createEagle();
-        Eagle eagle2 = animalFactory.createEagle();
-        Eagle eagle3 = animalFactory.createEagle();
+        for(int i=0; i<33000; i++){
+            zoo.addAnimal(animalFactory.createEagle());
+        }
 
-        Lion lion1 = animalFactory.createLion();
-        Lion lion2 = animalFactory.createLion();
-        Lion lion3 = animalFactory.createLion();
-
-        zoo.addAnimal(tiger1);
-        zoo.addAnimal(tiger2);
-        zoo.addAnimal(tiger3);
-
-        zoo.addAnimal(eagle1);
-        zoo.addAnimal(eagle2);
-        zoo.addAnimal(eagle3);
-
-        zoo.addAnimal(lion1);
-        zoo.addAnimal(lion2);
-        zoo.addAnimal(lion3);
+        for(int i=0; i<33000; i++){
+            zoo.addAnimal(animalFactory.createLion());
+        }
 
         System.out.println(zoo.showAnimals());
         System.out.println();
 
-        System.out.println(zoo.getTallestAnimalByClass(Tiger.class));
-        System.out.println(zoo.getTallestAnimalByClass(Lion.class));
-        System.out.println(zoo.getTallestAnimalByClass(Eagle.class));
+        System.out.printf("The tallest Tiger in zoo is %s\n", zoo.getTallestAnimalByClass(Tiger.class).orElse(null));
+        System.out.printf("The tallest Lion in zoo is %s\n", zoo.getTallestAnimalByClass(Eagle.class).orElse(null));
+        System.out.printf("The tallest Eagle in zoo is %s\n", zoo.getTallestAnimalByClass(Lion.class).orElse(null));
         System.out.println();
 
-        System.out.println(zoo.getShortestAnimalByClass(Tiger.class));
-        System.out.println(zoo.getShortestAnimalByClass(Lion.class));
-        System.out.println(zoo.getShortestAnimalByClass(Eagle.class));
+        System.out.printf("The shortest Tiger in zoo is %s\n", zoo.getShortestAnimalByClass(Tiger.class).orElse(null));
+        System.out.printf("The shortest Lion in zoo is %s\n", zoo.getShortestAnimalByClass(Eagle.class).orElse(null));
+        System.out.printf("The shortest Eagle in zoo is %s\n", zoo.getShortestAnimalByClass(Lion.class).orElse(null));
         System.out.println();
 
         System.out.println(zoo.getHeaviestAnimalByClass(Tiger.class));

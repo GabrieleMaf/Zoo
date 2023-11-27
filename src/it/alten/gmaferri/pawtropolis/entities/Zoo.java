@@ -7,6 +7,7 @@ import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.WingedAnimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Zoo {
@@ -36,33 +37,29 @@ public class Zoo {
                 collect(Collectors.joining("\n"));
     }
 
-    public <T extends Animal> T getTallestAnimalByClass(Class<T> tClass) {
-        return tClass.cast(animals.stream()
+    public <T extends Animal> Optional<Animal> getTallestAnimalByClass(Class<T> tClass) {
+        return animals.stream()
                 .filter(tClass::isInstance)
-                .max(Comparator.comparing(Animal::getWeight))
-                .orElse(null));
+                .max(Comparator.comparing(Animal::getWeight));
     }
 
 
-    public <T extends Animal> T getShortestAnimalByClass(Class<T> tClass) {
-        return tClass.cast(animals.stream()
+    public <T extends Animal> Optional<Animal> getShortestAnimalByClass(Class<T> tClass) {
+        return animals.stream()
                 .filter(tClass::isInstance)
-                .min(Comparator.comparing(Animal::getHeight))
-                .orElse(null));
+                .min(Comparator.comparing(Animal::getHeight));
     }
 
-    public <T extends Animal> T getHeaviestAnimalByClass(Class<T> tClass) {
-        return tClass.cast(animals.stream()
+    public <T extends Animal> Optional<Animal> getHeaviestAnimalByClass(Class<T> tClass) {
+        return animals.stream()
                 .filter(tClass::isInstance)
-                .max(Comparator.comparing(Animal::getWeight))
-                .orElse(null));
+                .max(Comparator.comparing(Animal::getWeight));
     }
 
-    public <T extends Animal> T getLightestAnimalByClass(Class<T> tClass) {
-        return tClass.cast(animals.stream()
+    public <T extends Animal> Optional<Animal> getLightestAnimalByClass(Class<T> tClass) {
+        return animals.stream()
                 .filter(tClass::isInstance)
-                .min(Comparator.comparing(Animal::getWeight))
-                .orElse(null));
+                .min(Comparator.comparing(Animal::getWeight));
     }
 
     public TailedAnimal getLongestTailedAnimal() {
