@@ -1,4 +1,4 @@
-package it.alten.gmaferri.pawtropolis.entities.animals.abstracts;
+package it.alten.gmaferri.pawtropolis.animals.model.abstracts;
 
 import java.time.LocalDate;
 

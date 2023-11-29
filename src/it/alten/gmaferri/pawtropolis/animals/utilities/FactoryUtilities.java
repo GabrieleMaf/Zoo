@@ -1,4 +1,4 @@
-package it.alten.gmaferri.pawtropolis.utilities.factory;
+package it.alten.gmaferri.pawtropolis.animals.utilities;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;

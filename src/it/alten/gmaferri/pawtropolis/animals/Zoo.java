@@ -1,8 +1,8 @@
-package it.alten.gmaferri.pawtropolis.entities;
+package it.alten.gmaferri.pawtropolis.animals;
 
-import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.Animal;
-import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.TailedAnimal;
-import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.WingedAnimal;
+import it.alten.gmaferri.pawtropolis.animals.model.abstracts.Animal;
+import it.alten.gmaferri.pawtropolis.animals.model.abstracts.TailedAnimal;
+import it.alten.gmaferri.pawtropolis.animals.model.abstracts.WingedAnimal;
 
 import java.util.ArrayList;
 import java.util.Comparator;
