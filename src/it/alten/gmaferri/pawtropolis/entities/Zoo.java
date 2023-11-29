@@ -4,37 +4,35 @@ import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.Animal;
 import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.TailedAnimal;
 import it.alten.gmaferri.pawtropolis.entities.animals.abstracts.WingedAnimal;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Zoo {
-    private final List<Animal> animals;
+    private final Map<? extends Animal, List<Animal>> animals;
 
     public Zoo() {
-        this.animals = new ArrayList<>();
+        this.animals = new HashMap<>();
     }
 
-    public List<Animal> getAnimals() {
+    public Map<?, List<Animal>> getAnimals() {
         return animals;
     }
 
     public boolean addAnimal(Animal animal) {
-        if (!animals.contains(animal))
-            return animals.add(animal);
-        return false;
+        if (animals.containsKey(animal.getClass()))
+            return animals.get(animal.getClass()).add( animal);
+        else return false;
     }
 
     public boolean removeAnimal(Animal animal) {
-        return animals.remove(animal);
+        if (animals.containsKey(animal.getClass()))
+            return animals.get(animal.getClass()).remove(animal);
+        else return false;
     }
 
     public String showAnimals() {
-        return animals.stream().
-                map(Animal::toString).
-                collect(Collectors.joining("\n"));
+        return animals.values().stream().
+                toList().stream().map(Animal::toString)
     }
 
     public <T extends Animal> Optional<Animal> getTallestAnimalByClass(Class<T> tClass) {
