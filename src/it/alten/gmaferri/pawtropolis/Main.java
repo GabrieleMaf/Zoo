@@ -1,6 +1,6 @@
 package it.alten.gmaferri.pawtropolis;
 
-import it.alten.gmaferri.pawtropolis.animals.utilities.AnimalFactory;
+import it.alten.gmaferri.pawtropolis.animals.AnimalFactory;
 import it.alten.gmaferri.pawtropolis.animals.Zoo;
 
 public class Main {

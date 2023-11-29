@@ -1,4 +1,4 @@
-package it.alten.gmaferri.pawtropolis.animals.utilities;
+package it.alten.gmaferri.pawtropolis.animals;
 
 import it.alten.gmaferri.pawtropolis.animals.model.Eagle;
 import it.alten.gmaferri.pawtropolis.animals.model.Lion;
