@@ -1,14 +1,19 @@
 package it.alten.gmaferri.pawtropolis.animals.utilities;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.util.Locale;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class FactoryUtilities {
 
     private FactoryUtilities(){}
-    public static final DecimalFormat decimalFormat =new DecimalFormat("#.##");
+
+    public static final DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
+    public static final DecimalFormat decimalFormat=new DecimalFormat("#.##", symbols);
     public static final Random randomizer = new Random();
     public static final String[] names = {
             "Jose", "Teixeira", "Denis", "Lian", "Luffy", "Titti",

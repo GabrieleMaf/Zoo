@@ -34,44 +34,44 @@ public class Zoo {
     }
 
     public String showAnimals() {
-        return animals.values().stream().flatMap(Collection::stream).toList().stream().map(Animal::toString).collect(Collectors.joining(","));
+        return animals.values().stream().flatMap(Collection::stream).toList().stream().map(Animal::toString).collect(Collectors.joining("\n"));
     }
 
-    /*public <T extends Animal> Optional<Animal> getTallestAnimalByClass(Class<T> tClass) {
-        return animals.stream()
-                .filter(tClass::isInstance)
+
+    public <T extends Animal> Optional<Animal> getTallestAnimalByClass(Class<T> tClass) {
+        return animals.get(tClass)
+                .stream()
                 .max(Comparator.comparing(Animal::getWeight));
     }
 
 
     public <T extends Animal> Optional<Animal> getShortestAnimalByClass(Class<T> tClass) {
-        return animals.stream()
-                .filter(tClass::isInstance)
+        return  animals.get(tClass)
+                .stream()
                 .min(Comparator.comparing(Animal::getHeight));
     }
 
     public <T extends Animal> Optional<Animal> getHeaviestAnimalByClass(Class<T> tClass) {
-        return animals.stream()
-                .filter(tClass::isInstance)
+        return  animals.get(tClass)
+                .stream()
                 .max(Comparator.comparing(Animal::getWeight));
     }
 
     public <T extends Animal> Optional<Animal> getLightestAnimalByClass(Class<T> tClass) {
-        return animals.stream()
-                .filter(tClass::isInstance)
+        return  animals.get(tClass)
+                .stream()
                 .min(Comparator.comparing(Animal::getWeight));
     }
 
-    public TailedAnimal getLongestTailedAnimal() {
-        return animals.stream()
-                .filter(TailedAnimal.class::isInstance)
-                .map(TailedAnimal.class::cast)
-                .max(Comparator.comparing(TailedAnimal::getTailLength))
-                .orElse(null);
+    public Optional<TailedAnimal> getLongestTailedAnimal() {
+        return animals.entrySet()
+                .stream()
+                .filter(classListEntry -> classListEntry.getKey().isAssignableFrom(TailedAnimal.class))
+                .collect()
 
-    }
+                ;
 
-    public WingedAnimal getWidestWingspanAnimal() {
+    public Optional<WingedAnimal> getWidestWingspanAnimal() {
         return animals.stream()
                 .filter(WingedAnimal.class::isInstance)
                 .map(WingedAnimal.class::cast)
