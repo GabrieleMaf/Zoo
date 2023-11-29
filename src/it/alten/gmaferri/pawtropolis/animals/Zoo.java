@@ -4,40 +4,40 @@ import it.alten.gmaferri.pawtropolis.animals.model.abstracts.Animal;
 import it.alten.gmaferri.pawtropolis.animals.model.abstracts.TailedAnimal;
 import it.alten.gmaferri.pawtropolis.animals.model.abstracts.WingedAnimal;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Zoo {
-    private final List<Animal> animals;
+    private final Map<Class<? extends Animal>, List<Animal>> animals;
 
     public Zoo() {
-        this.animals = new ArrayList<>();
+        this.animals = new HashMap<>();
     }
 
-    public List<Animal> getAnimals() {
+    public Map<Class<? extends Animal>, List<Animal>> getAnimals() {
         return animals;
     }
 
     public boolean addAnimal(Animal animal) {
-        if (!animals.contains(animal))
-            return animals.add(animal);
-        return false;
+        if (!animals.containsKey(animal.getClass())) {
+            animals.put(animal.getClass(), new ArrayList<>());
+        }
+        if(!animals.get(animal.getClass()).contains(animal))
+            return animals.get(animal.getClass()).add(animal);
+        else
+            return false;
     }
 
     public boolean removeAnimal(Animal animal) {
-        return animals.remove(animal);
+       return animals.get(animal.getClass()).remove(animal);
     }
 
     public String showAnimals() {
-        return animals.stream().
-                map(Animal::toString).
-                collect(Collectors.joining("\n"));
+        return animals.values().stream().flatMap(Collection::stream).toList().stream().map(Animal::toString).collect(Collectors.joining(","));
     }
 
-    public <T extends Animal> Optional<Animal> getTallestAnimalByClass(Class<T> tClass) {
+    /*public <T extends Animal> Optional<Animal> getTallestAnimalByClass(Class<T> tClass) {
         return animals.stream()
                 .filter(tClass::isInstance)
                 .max(Comparator.comparing(Animal::getWeight));
@@ -77,6 +77,6 @@ public class Zoo {
                 .map(WingedAnimal.class::cast)
                 .max(Comparator.comparing(WingedAnimal::getWingspan))
                 .orElse(null);
-    }
+    }*/
 
 }

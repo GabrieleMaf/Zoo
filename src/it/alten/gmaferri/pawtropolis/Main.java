@@ -1,10 +1,7 @@
 package it.alten.gmaferri.pawtropolis;
 
+import it.alten.gmaferri.pawtropolis.animals.utilities.AnimalFactory;
 import it.alten.gmaferri.pawtropolis.animals.Zoo;
-import it.alten.gmaferri.pawtropolis.animals.model.Eagle;
-import it.alten.gmaferri.pawtropolis.animals.model.Lion;
-import it.alten.gmaferri.pawtropolis.animals.model.Tiger;
-import it.alten.gmaferri.pawtropolis.animals.AnimalFactory;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,7 +24,7 @@ public class Main {
         System.out.println(zoo.showAnimals());
         System.out.println();
 
-        System.out.printf("The tallest Tiger in zoo is %s\n", zoo.getTallestAnimalByClass(Tiger.class).orElse(null));
+        /*System.out.printf("The tallest Tiger in zoo is %s\n", zoo.getTallestAnimalByClass(Tiger.class).orElse(null));
         System.out.printf("The tallest Lion in zoo is %s\n", zoo.getTallestAnimalByClass(Eagle.class).orElse(null));
         System.out.printf("The tallest Eagle in zoo is %s\n", zoo.getTallestAnimalByClass(Lion.class).orElse(null));
         System.out.println();
@@ -49,7 +46,7 @@ public class Main {
 
         System.out.println(zoo.getLongestTailedAnimal());
         System.out.println(zoo.getWidestWingspanAnimal());
-
+*/
 
     }
 }
