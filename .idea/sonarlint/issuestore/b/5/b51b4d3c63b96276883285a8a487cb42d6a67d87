@@ -1,4 +1,27 @@
 
+<<<<<<< Updated upstream
 G	java:S106"+Replace this use of System.out by a logger.(°¿½8±ßŞÛÁ1
 L	java:S106"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8²ßŞÛÁ1
 X	java:S125"<This block of commented-out lines of code should be removed.(°ùÙ±8³ßŞÛÁ1
+=======
+G	java:S106"+Replace this use of System.out by a logger.(°¿½8²âøÛÁ1
+L	java:S106 "+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ÁâøÛÁ1
+G	java:S106""+Replace this use of System.out by a logger.(«¯‘—8ÑâøÛÁ1
+G	java:S106#"+Replace this use of System.out by a logger.(§Ãœ×8áâøÛÁ1
+L	java:S106$"+Replace this use of System.out by a logger.(‹ıšÎûÿÿÿÿ8ââøÛÁ1
+L	java:S106%"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8ãâøÛÁ1
+G	java:S106'"+Replace this use of System.out by a logger.(õß¶¯8äâøÛÁ1
+L	java:S106("+Replace this use of System.out by a logger.(ñÄ±ºşÿÿÿÿ8äâøÛÁ1
+L	java:S106)"+Replace this use of System.out by a logger.(Ûøµïÿÿÿÿÿ8åâøÛÁ1
+L	java:S106*"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8æâøÛÁ1
+G	java:S106,"+Replace this use of System.out by a logger.(å²’Ù8æâøÛÁ1
+L	java:S106-"+Replace this use of System.out by a logger.(÷«ï‡ÿÿÿÿÿ8çâøÛÁ1
+G	java:S106."+Replace this use of System.out by a logger.(ìØ÷©8çâøÛÁ1
+L	java:S106/"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8èâøÛÁ1
+G	java:S1061"+Replace this use of System.out by a logger.(©Ã‰è8èâøÛÁ1
+G	java:S1062"+Replace this use of System.out by a logger.(°™®ç8éâøÛÁ1
+G	java:S1063"+Replace this use of System.out by a logger.(Şíğ¾8éâøÛÁ1
+L	java:S1064"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8êâøÛÁ1
+G	java:S1066"+Replace this use of System.out by a logger.(Ä¿â‡8ëâøÛÁ1
+G	java:S1067"+Replace this use of System.out by a logger.(Šìú¯8ëâøÛÁ1
+>>>>>>> Stashed changes
