@@ -12,17 +12,18 @@ public class Main {
         Zoo zoo = new Zoo();
         AnimalFactory animalFactory = AnimalFactory.getInstance();
 
-        for(int i=0; i<33000; i++){
-            zoo.addAnimal(animalFactory.createTiger());
-        }
+        zoo.addAnimal(animalFactory.createEagle());
+        zoo.addAnimal(animalFactory.createEagle());
+        zoo.addAnimal(animalFactory.createEagle());
 
-        for(int i=0; i<33000; i++){
-            zoo.addAnimal(animalFactory.createEagle());
-        }
+        zoo.addAnimal(animalFactory.createTiger());
+        zoo.addAnimal(animalFactory.createTiger());
+        zoo.addAnimal(animalFactory.createTiger());
 
-        for(int i=0; i<33000; i++){
-            zoo.addAnimal(animalFactory.createLion());
-        }
+        zoo.addAnimal(animalFactory.createLion());
+        zoo.addAnimal(animalFactory.createLion());
+        zoo.addAnimal(animalFactory.createLion());
+
 
         System.out.println(zoo.showAnimals());
         System.out.println();
@@ -47,8 +48,8 @@ public class Main {
         System.out.printf("The lightest Eagle in zoo is %s%n", zoo.getLightestAnimalByClass(Lion.class).orElse(null));
         System.out.println();
 
-        //System.out.println(zoo.getLongestTailedAnimal());
-        //System.out.println(zoo.getWidestWingspanAnimal());
+        System.out.println(zoo.getLongestTailedAnimal());
+        System.out.println(zoo.getWidestWingspanAnimal());
 
     }
 }
