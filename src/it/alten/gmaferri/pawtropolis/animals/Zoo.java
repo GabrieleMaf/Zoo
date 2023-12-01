@@ -21,18 +21,16 @@ public class Zoo {
         return animals;
     }
 
-    public boolean addAnimal(Animal animal) {
-        if (!animals.containsKey(animal.getClass()) && !Modifier.isAbstract(animal.getClass().getModifiers())) {
+    public void addAnimal(Animal animal) {
+        if (!animals.containsKey(animal.getClass()) && !Modifier.isAbstract(animal.getClass().getModifiers()))
             animals.put(animal.getClass(), new ArrayList<>());
-        }
-        if(!animals.get(animal.getClass()).contains(animal))
-            return animals.get(animal.getClass()).add(animal);
-        else
-            return false;
+        if (!animals.get(animal.getClass()).contains(animal))
+            animals.get(animal.getClass()).add(animal);
     }
 
-    public boolean removeAnimal(Animal animal) {
-       return animals.get(animal.getClass()).remove(animal);
+    public void removeAnimal(Animal animal) {
+       if (animals.get(animal.getClass()).remove(animal) && (animals.get(animal.getClass()).isEmpty()))
+               animals.remove(animal.getClass());
     }
 
     public String showAnimals() {
@@ -47,6 +45,8 @@ public class Zoo {
 
 
     public <T extends Animal> Optional<Animal> getTallestAnimalByClass(Class<T> tClass) {
+        if (Objects.isNull(animals.get(tClass)))
+            return Optional.empty();
         return animals.get(tClass)
                 .stream()
                 .max(Comparator.comparing(Animal::getWeight));
@@ -54,18 +54,24 @@ public class Zoo {
 
 
     public <T extends Animal> Optional<Animal> getShortestAnimalByClass(Class<T> tClass) {
+        if (Objects.isNull(animals.get(tClass)))
+            return Optional.empty();
         return  animals.get(tClass)
                 .stream()
                 .min(Comparator.comparing(Animal::getHeight));
     }
 
     public <T extends Animal> Optional<Animal> getHeaviestAnimalByClass(Class<T> tClass) {
+        if (Objects.isNull(animals.get(tClass)))
+            return Optional.empty();
         return  animals.get(tClass)
                 .stream()
                 .max(Comparator.comparing(Animal::getWeight));
     }
 
     public <T extends Animal> Optional<Animal> getLightestAnimalByClass(Class<T> tClass) {
+        if (Objects.isNull(animals.get(tClass)))
+            return Optional.empty();
         return  animals.get(tClass)
                 .stream()
                 .min(Comparator.comparing(Animal::getWeight));
@@ -81,7 +87,7 @@ public class Zoo {
     }
 
     public Optional<TailedAnimal> getLongestTailedAnimal() {
-        return getAnimalGroup(TailedAnimal.class)
+        return  getAnimalGroup(TailedAnimal.class)
                 .stream()
                 .map(TailedAnimal.class::cast)
                 .max(Comparator.comparing(TailedAnimal::getTailLength));
