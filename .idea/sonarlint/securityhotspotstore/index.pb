@@ -18,3 +18,5 @@ i
 9src/it/alten/gmaferri/pawtropolis/animals/model/Lion.java,b/3/b316670496daf7214452bea104530b64c71a73b8
 j
 :src/it/alten/gmaferri/pawtropolis/animals/model/Eagle.java,5/5/55c0069c0bcd81bba81bf461ed5e4324a5fe32b2
+{
+Ksrc/it/alten/gmaferri/pawtropolis/animals/model/abstracts/WingedAnimal.java,a/c/ac170ba2112b3e39ba87d450041c9289eb002ca0

@@ -20,7 +20,7 @@ L	java:S1065"+Replace this use of System.out by a logger.(ªÓ¼áþÿÿÿÿ8Ð‰‘…Â1
 G	java:S1067"+Replace this use of System.out by a logger.(Ä¿â‡8Ñ‰‘…Â1
 G	java:S1068"+Replace this use of System.out by a logger.(Šìú¯8Ñ‰‘…Â1
 Q
-java:S1128	"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8ö©Á¦Â1
+java:S1128	"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8ÃßïÏÂ1
 R
 java:S1128
-"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8ö©Á¦Â1
+"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8ÄßïÏÂ1

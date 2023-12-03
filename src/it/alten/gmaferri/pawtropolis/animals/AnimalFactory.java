@@ -25,7 +25,7 @@ public class AnimalFactory {
         return new Tiger(names[randomizer.nextInt(names.length)],
                 favoriteFoods[randomizer.nextInt(favoriteFoods.length)],
                 randomizer.nextInt(11),
-                between(LocalDate.of(2000, 1, 1), LocalDate.now()),
+                between(LocalDate.of(2014, 1, 1), LocalDate.now()),
                 Double.parseDouble(decimalFormat.format(randomizer.nextDouble(225,300))),
                 Double.parseDouble(decimalFormat.format(randomizer.nextDouble(0.85, 1.2))),
                 Double.parseDouble(decimalFormat.format(randomizer.nextDouble(0.65,3))));
@@ -36,7 +36,7 @@ public class AnimalFactory {
         return new Lion(names[randomizer.nextInt(names.length)],
                 favoriteFoods[randomizer.nextInt(favoriteFoods.length)],
                 randomizer.nextInt(11),
-                between(LocalDate.of(2000, 1, 1), LocalDate.now()),
+                between(LocalDate.of(2014, 1, 1), LocalDate.now()),
                 Double.parseDouble(decimalFormat.format(randomizer.nextDouble(3,7))),
                 Double.parseDouble(decimalFormat.format(randomizer.nextDouble(0.75, 0.84))),
                 Double.parseDouble(decimalFormat.format(randomizer.nextDouble(1.8, 2.3))));
@@ -47,7 +47,7 @@ public class AnimalFactory {
         return new Eagle(names[randomizer.nextInt(names.length)],
                 favoriteFoods[randomizer.nextInt(favoriteFoods.length)],
                 randomizer.nextInt(11),
-                between(LocalDate.of(2000, 1, 1), LocalDate.now()),
+                between(LocalDate.of(2014, 1, 1), LocalDate.now()),
                 Double.parseDouble(decimalFormat.format(randomizer.nextDouble(200, 250))),
                 Double.parseDouble(decimalFormat.format(randomizer.nextDouble(0.9, 1.2))),
                 Double.parseDouble(decimalFormat.format(randomizer.nextDouble(0.7, 1))));
